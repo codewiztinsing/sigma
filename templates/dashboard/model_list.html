@@ -1,0 +1,56 @@
+{% extends "dashboard/base.html" %}
+{% load dashboard_extras %}
+
+{% block title %}{{ config.label }}{% endblock %}
+{% block page_title %}{{ config.label }}{% endblock %}
+
+{% block content %}
+<div class="db-page-header">
+  <h2>{{ config.label }}</h2>
+  {% if config.can_create %}
+  <a href="{% url 'dashboard_model_create' model_slug=model_slug %}" class="db-btn"><i class="fas fa-plus"></i> Add New</a>
+  {% endif %}
+</div>
+
+<div class="db-card">
+  {% if objects %}
+  <table class="db-table">
+    <thead>
+      <tr>
+        {% for field in config.list_fields %}
+        <th>{{ config.model|field_label:field }}</th>
+        {% endfor %}
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for obj in objects %}
+      <tr>
+        {% for field in config.list_fields %}
+        <td>
+          {% with value=obj|get_attr:field %}
+            {% if value == True %}
+              <span class="db-badge db-badge-on">Yes</span>
+            {% elif value == False %}
+              <span class="db-badge db-badge-off">No</span>
+            {% else %}
+              {{ value }}
+            {% endif %}
+          {% endwith %}
+        </td>
+        {% endfor %}
+        <td class="db-row-actions">
+          {% if config.can_edit %}
+          <a href="{% url 'dashboard_model_edit' model_slug=model_slug pk=obj.pk %}" class="db-btn db-btn-ghost"><i class="fas fa-pen"></i></a>
+          {% endif %}
+          <a href="{% url 'dashboard_model_delete' model_slug=model_slug pk=obj.pk %}" class="db-btn db-btn-danger"><i class="fas fa-trash"></i></a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <div class="db-empty">No records yet.</div>
+  {% endif %}
+</div>
+{% endblock %}

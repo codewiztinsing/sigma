@@ -1,0 +1,26 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %}{% if is_create %}Add{% else %}Edit{% endif %} {{ config.label }}{% endblock %}
+{% block page_title %}{% if is_create %}Add{% else %}Edit{% endif %} {{ config.label }}{% endblock %}
+
+{% block content %}
+<div class="db-page-header">
+  <h2>{% if is_create %}Add New{% else %}Edit{% endif %} — {{ config.label }}</h2>
+  <a href="{% url 'dashboard_model_list' model_slug=model_slug %}" class="db-btn db-btn-ghost"><i class="fas fa-arrow-left"></i> Back to list</a>
+</div>
+
+<div class="db-card">
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="db-form-group">
+      <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} *{% endif %}</label>
+      {{ field }}
+      {% if field.help_text %}<div style="font-size: 12px; color: var(--db-muted); margin-top: 4px;">{{ field.help_text }}</div>{% endif %}
+      {% for error in field.errors %}<div style="font-size: 12px; color: #b3261e; margin-top: 4px;">{{ error }}</div>{% endfor %}
+    </div>
+    {% endfor %}
+    <button type="submit" class="db-btn"><i class="fas fa-check"></i> {% if is_create %}Create{% else %}Save Changes{% endif %}</button>
+  </form>
+</div>
+{% endblock %}

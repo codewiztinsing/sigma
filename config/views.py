@@ -17,7 +17,3 @@ def impact(request):
     return render(request, 'impact.html', {'active_page': 'impact'})
 
 
-def projects(request):
-    return render(request, 'projects.html', {'active_page': 'projects'})
-
-

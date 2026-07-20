@@ -1,0 +1,16 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %}Delete {{ config.label }}{% endblock %}
+{% block page_title %}Delete Confirmation{% endblock %}
+
+{% block content %}
+<div class="db-card" style="max-width: 480px;">
+  <h2 style="margin-top: 0;">Delete this record?</h2>
+  <p style="color: var(--db-muted);">"<strong>{{ instance }}</strong>" will be permanently removed. This cannot be undone.</p>
+  <form method="POST">
+    {% csrf_token %}
+    <button type="submit" class="db-btn db-btn-danger"><i class="fas fa-trash"></i> Delete</button>
+    <a href="{% url 'dashboard_model_list' model_slug=model_slug %}" class="db-btn db-btn-ghost">Cancel</a>
+  </form>
+</div>
+{% endblock %}

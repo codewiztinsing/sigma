@@ -14,6 +14,7 @@
   <p>Discover how we transform market challenges into innovative enterprises through technology development, enterprise building, and ecosystem support.</p>
 </section>
 
+{% if featured_project %}
 <!-- Featured Project -->
 <section class="section section-white">
   <div class="container">
@@ -22,28 +23,29 @@
     <div class="project-highlight animate-on-scroll">
       <div class="project-highlight-flex">
         <div class="project-highlight-body">
-          <span class="badge green">Flagship Initiative</span>
-          <h3>Innovation-to-Livelihood Venture Studio</h3>
-          <p>Our flagship program transforms community livelihood challenges into sustainable enterprises through a systematic eight-stage process. From identifying unmet needs to scaling proven models, we build businesses that create jobs and improve lives.</p>
-          <p><strong>Impact:</strong> 35 enterprises created, 1,200+ jobs generated, 15+ communities reached.</p>
+          {% if featured_project.badge_text %}<span class="badge {{ featured_project.badge_color }}">{{ featured_project.badge_text }}</span>{% endif %}
+          <h3>{{ featured_project.title }}</h3>
+          <p>{{ featured_project.description }}</p>
+          {% if featured_project.impact_summary %}<p><strong>Impact:</strong> {{ featured_project.impact_summary }}</p>{% endif %}
           <div class="mini-stats">
-            <div><div class="mini-stat-number">35</div><div class="mini-stat-label">Enterprises</div></div>
-            <div><div class="mini-stat-number">1,200+</div><div class="mini-stat-label">Jobs</div></div>
-            <div><div class="mini-stat-number">15+</div><div class="mini-stat-label">Communities</div></div>
+            {% if featured_project.stat_1_number %}<div><div class="mini-stat-number">{{ featured_project.stat_1_number }}</div><div class="mini-stat-label">{{ featured_project.stat_1_label }}</div></div>{% endif %}
+            {% if featured_project.stat_2_number %}<div><div class="mini-stat-number">{{ featured_project.stat_2_number }}</div><div class="mini-stat-label">{{ featured_project.stat_2_label }}</div></div>{% endif %}
+            {% if featured_project.stat_3_number %}<div><div class="mini-stat-number">{{ featured_project.stat_3_number }}</div><div class="mini-stat-label">{{ featured_project.stat_3_label }}</div></div>{% endif %}
           </div>
           <a href="{% url 'impact' %}" class="btn-green">View Impact <i class="fas fa-arrow-right"></i></a>
         </div>
         <div class="project-highlight-image">
-          <img src="{% static 'images/placeholder-featured.jpg' %}" alt="Innovation-to-Livelihood Venture Studio" loading="lazy">
+          <img src="{% if featured_project.image %}{{ featured_project.image.url }}{% else %}{% static 'images/placeholder-featured.jpg' %}{% endif %}" alt="{{ featured_project.title }}" loading="lazy">
           <div class="project-highlight-caption">
-            <div class="cap-title">Innovation-to-Livelihood</div>
-            <div class="cap-sub">Transforming challenges into enterprises</div>
+            <div class="cap-title">{{ featured_project.title }}</div>
+            <div class="cap-sub">{{ featured_project.location }}</div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+{% endif %}
 
 <!-- Project Grid with Filters -->
 <section class="section section-gray">
@@ -53,96 +55,27 @@
 
     <div class="tab-buttons animate-on-scroll" style="justify-content: center; margin-bottom: 30px;">
       <button class="tab-btn active filter-btn" data-filter="all">All Projects</button>
-      <button class="tab-btn filter-btn" data-filter="green">Green Tech</button>
-      <button class="tab-btn filter-btn" data-filter="agriculture">Agriculture</button>
-      <button class="tab-btn filter-btn" data-filter="energy">Energy</button>
-      <button class="tab-btn filter-btn" data-filter="manufacturing">Manufacturing</button>
+      {% for category in categories %}
+      <button class="tab-btn filter-btn" data-filter="{{ category.slug }}">{{ category.label }}</button>
+      {% endfor %}
     </div>
 
     <div class="projects-grid three-col">
-      <div class="project-card filter-item animate-on-scroll animate-delay-1" data-category="green">
-        <img src="{% static 'images/placeholder-project.jpg' %}" alt="Waste-to-Value Initiative" class="project-image" loading="lazy">
+      {% for project in grid_projects %}
+      <div class="project-card filter-item animate-on-scroll animate-delay-{% cycle '1' '2' '3' %}" data-category="{{ project.category.slug }}">
+        <img src="{% if project.image %}{{ project.image.url }}{% else %}{% static 'images/placeholder-project.jpg' %}{% endif %}" alt="{{ project.title }}" class="project-image" loading="lazy">
         <div class="project-content">
-          <span class="badge-sm green">Circular Economy</span>
-          <h4 class="project-title">Waste-to-Value Initiative</h4>
-          <p class="project-desc">Transforming agricultural and plastic waste into valuable products through innovative recycling and upcycling technologies.</p>
+          <span class="badge-sm {{ project.badge_color }}">{{ project.badge_text }}</span>
+          <h4 class="project-title">{{ project.title }}</h4>
+          <p class="project-desc">{{ project.description }}</p>
           <div class="focus-tags-box">
             <div class="focus-tags-title">Focus Areas</div>
-            <div class="focus-tags"><span>Recycling</span><span>Green Manufacturing</span></div>
+            <div class="focus-tags">{% for tag in project.tag_list %}<span>{{ tag }}</span>{% endfor %}</div>
           </div>
-          <div class="project-location"><i class="fas fa-map-marker-alt"></i> Addis Ababa</div>
+          <div class="project-location"><i class="fas fa-map-marker-alt"></i> {{ project.location }}</div>
         </div>
       </div>
-
-      <div class="project-card filter-item animate-on-scroll animate-delay-2" data-category="agriculture">
-        <img src="{% static 'images/placeholder-project.jpg' %}" alt="Solar-Powered Irrigation" class="project-image" loading="lazy">
-        <div class="project-content">
-          <span class="badge-sm blue">Agro-processing</span>
-          <h4 class="project-title">Solar-Powered Irrigation Systems</h4>
-          <p class="project-desc">Affordable solar irrigation solutions that increase crop yields, reduce water waste, and improve farmer incomes.</p>
-          <div class="focus-tags-box">
-            <div class="focus-tags-title">Focus Areas</div>
-            <div class="focus-tags"><span>Renewable Energy</span><span>Agriculture</span></div>
-          </div>
-          <div class="project-location"><i class="fas fa-map-marker-alt"></i> Oromia Region</div>
-        </div>
-      </div>
-
-      <div class="project-card filter-item animate-on-scroll animate-delay-3" data-category="energy">
-        <img src="{% static 'images/placeholder-project.jpg' %}" alt="Biogas Digesters" class="project-image" loading="lazy">
-        <div class="project-content">
-          <span class="badge-sm dark-green">Clean Energy</span>
-          <h4 class="project-title">Community Biogas Digesters</h4>
-          <p class="project-desc">Household and community-scale biogas systems that convert organic waste into clean cooking fuel and organic fertilizer.</p>
-          <div class="focus-tags-box">
-            <div class="focus-tags-title">Focus Areas</div>
-            <div class="focus-tags"><span>Biogas</span><span>Rural Development</span></div>
-          </div>
-          <div class="project-location"><i class="fas fa-map-marker-alt"></i> Amhara Region</div>
-        </div>
-      </div>
-
-      <div class="project-card filter-item animate-on-scroll animate-delay-1" data-category="manufacturing">
-        <img src="{% static 'images/placeholder-project.jpg' %}" alt="Sustainable Building Materials" class="project-image" loading="lazy">
-        <div class="project-content">
-          <span class="badge-sm blue">Construction</span>
-          <h4 class="project-title">Eco-Friendly Building Materials</h4>
-          <p class="project-desc">Developing locally manufactured sustainable construction materials from recycled and natural resources.</p>
-          <div class="focus-tags-box">
-            <div class="focus-tags-title">Focus Areas</div>
-            <div class="focus-tags"><span>Green Construction</span><span>Manufacturing</span></div>
-          </div>
-          <div class="project-location"><i class="fas fa-map-marker-alt"></i> Addis Ababa</div>
-        </div>
-      </div>
-
-      <div class="project-card filter-item animate-on-scroll animate-delay-2" data-category="agriculture">
-        <img src="{% static 'images/placeholder-project.jpg' %}" alt="Post-Harvest Processing" class="project-image" loading="lazy">
-        <div class="project-content">
-          <span class="badge-sm green">Agro-processing</span>
-          <h4 class="project-title">Post-Harvest Processing Equipment</h4>
-          <p class="project-desc">Affordable processing machinery that reduces food losses, improves quality, and increases farmer incomes.</p>
-          <div class="focus-tags-box">
-            <div class="focus-tags-title">Focus Areas</div>
-            <div class="focus-tags"><span>Food Security</span><span>Manufacturing</span></div>
-          </div>
-          <div class="project-location"><i class="fas fa-map-marker-alt"></i> SNNPR</div>
-        </div>
-      </div>
-
-      <div class="project-card filter-item animate-on-scroll animate-delay-3" data-category="green">
-        <img src="{% static 'images/placeholder-project.jpg' %}" alt="Digital Innovation Hub" class="project-image" loading="lazy">
-        <div class="project-content">
-          <span class="badge-sm blue">Digital Innovation</span>
-          <h4 class="project-title">Rural Digital Innovation Hub</h4>
-          <p class="project-desc">Technology centers providing digital skills training, internet access, and innovation support for rural youth and entrepreneurs.</p>
-          <div class="focus-tags-box">
-            <div class="focus-tags-title">Focus Areas</div>
-            <div class="focus-tags"><span>Digital</span><span>Youth Empowerment</span></div>
-          </div>
-          <div class="project-location"><i class="fas fa-map-marker-alt"></i> Multiple Regions</div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>

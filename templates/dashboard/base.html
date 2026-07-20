@@ -1,0 +1,179 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}Dashboard{% endblock %} — Sigma EcoBuild</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root {
+    --db-bg: #f4f6f8;
+    --db-sidebar: #10241e;
+    --db-sidebar-active: #16543f;
+    --db-accent: #1f8a5f;
+    --db-border: #e2e6ea;
+    --db-text: #1c2b27;
+    --db-muted: #6b7a75;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--db-bg);
+    color: var(--db-text);
+  }
+  .db-layout { display: flex; min-height: 100vh; }
+  .db-sidebar {
+    width: 250px;
+    background: var(--db-sidebar);
+    color: #fff;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .db-sidebar-brand {
+    padding: 22px 20px;
+    font-size: 18px;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .db-sidebar-brand span { color: #4fd1a5; }
+  .db-nav { flex: 1; padding: 16px 0; }
+  .db-nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 20px;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .db-nav a:hover { background: rgba(255,255,255,0.06); color: #fff; }
+  .db-nav a.active { background: var(--db-sidebar-active); color: #fff; font-weight: 600; }
+  .db-nav a i { width: 18px; text-align: center; }
+  .db-sidebar-footer {
+    padding: 16px 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 13px;
+  }
+  .db-sidebar-footer form button {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.75);
+    cursor: pointer;
+    font-size: 13px;
+    padding: 0;
+  }
+  .db-sidebar-footer form button:hover { color: #fff; }
+  .db-main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+  .db-topbar {
+    background: #fff;
+    border-bottom: 1px solid var(--db-border);
+    padding: 16px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .db-topbar h1 { font-size: 18px; margin: 0; }
+  .db-topbar .db-user { font-size: 13px; color: var(--db-muted); }
+  .db-content { padding: 28px; flex: 1; }
+  .db-card {
+    background: #fff;
+    border: 1px solid var(--db-border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .db-messages { margin-bottom: 18px; }
+  .db-alert {
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .db-alert-success { background: #e6f6ee; color: #146c43; border: 1px solid #b6e6cc; }
+  .db-alert-error { background: #fdecea; color: #b3261e; border: 1px solid #f5c2be; }
+  table.db-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  table.db-table th, table.db-table td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--db-border);
+  }
+  table.db-table th { color: var(--db-muted); font-weight: 600; font-size: 12px; text-transform: uppercase; }
+  .db-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background: var(--db-accent);
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+  .db-btn:hover { background: #176b48; }
+  .db-btn-danger { background: #c0392b; }
+  .db-btn-danger:hover { background: #a5321f; }
+  .db-btn-ghost { background: transparent; color: var(--db-text); border: 1px solid var(--db-border); }
+  .db-row-actions a, .db-row-actions button { margin-right: 6px; font-size: 13px; padding: 6px 10px; }
+  .db-form-group { margin-bottom: 16px; }
+  .db-form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+  .db-form-group input, .db-form-group textarea, .db-form-group select {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid var(--db-border);
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+  }
+  .db-form-group textarea { min-height: 100px; }
+  .db-badge { padding: 3px 9px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+  .db-badge-on { background: #e6f6ee; color: #146c43; }
+  .db-badge-off { background: #f1f1f1; color: #777; }
+  .db-empty { color: var(--db-muted); padding: 30px 0; text-align: center; }
+  .db-page-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+  .db-page-header h2 { margin: 0; font-size: 20px; }
+</style>
+{% block extra_head %}{% endblock %}
+</head>
+<body>
+<div class="db-layout">
+  <aside class="db-sidebar">
+    <div class="db-sidebar-brand">SIGMA<span>.</span> Dashboard</div>
+    <nav class="db-nav">
+      <a href="{% url 'dashboard_home' %}" class="{% if not model_slug %}active{% endif %}"><i class="fas fa-gauge"></i> Overview</a>
+      {% for slug, config in registry.items %}
+      <a href="{% url 'dashboard_model_list' model_slug=slug %}" class="{% if model_slug == slug %}active{% endif %}"><i class="fas fa-table"></i> {{ config.label }}</a>
+      {% endfor %}
+      <a href="{% url 'home' %}" target="_blank"><i class="fas fa-arrow-up-right-from-square"></i> View Site</a>
+    </nav>
+    <div class="db-sidebar-footer">
+      {% if request.user.is_authenticated %}
+      <div style="margin-bottom: 8px;">{{ request.user.username }}</div>
+      <form method="POST" action="{% url 'dashboard_logout' %}">
+        {% csrf_token %}
+        <button type="submit"><i class="fas fa-right-from-bracket"></i> Log out</button>
+      </form>
+      {% endif %}
+    </div>
+  </aside>
+  <div class="db-main">
+    <div class="db-topbar">
+      <h1>{% block page_title %}Dashboard{% endblock %}</h1>
+      <div class="db-user">{{ request.user.username }}</div>
+    </div>
+    <div class="db-content">
+      {% if messages %}
+      <div class="db-messages">
+        {% for message in messages %}
+        <div class="db-alert db-alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% block content %}{% endblock %}
+    </div>
+  </div>
+</div>
+</body>
+</html>
