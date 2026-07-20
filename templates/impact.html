@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Our Impact — Sigma EcoBuild &amp; Innovation{% endblock %}
+{% block meta_description %}See how Sigma EcoBuild & Innovation creates measurable impact through job creation, enterprise building, and technology development across Ethiopia.{% endblock %}
+{% block canonical %}https://www.sigmaecobuild.com/impact.html{% endblock %}
+{% block og_tags %}{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="breadcrumb"><a href="{% url 'home' %}">Home</a> / Our Impact</div>
+  <h1>Our <span class="accent">Impact</span></h1>
+  <p>Every venture Sigma builds is designed to create measurable and lasting impact through job creation, enterprise building, productivity improvement, and inclusive economic growth.</p>
+</section>
+
+<!-- Impact Stats -->
+<section class="section section-white">
+  <h2 class="section-title animate-on-scroll">Impact <span class="accent">Highlights</span></h2>
+  <div class="title-underline animate-on-scroll"></div>
+  <div class="stats-grid">
+    <div class="stat-item animate-on-scroll animate-delay-1">
+      <div class="stat-icon"><i class="fas fa-graduation-cap"></i></div>
+      <div class="stat-number" data-count="432">0</div>
+      <div class="stat-label">Youth Trained</div>
+      <div class="stat-sublabel">in 45 Batches</div>
+    </div>
+    <div class="stat-item animate-on-scroll animate-delay-2">
+      <div class="stat-icon"><i class="fas fa-building"></i></div>
+      <div class="stat-number" data-count="35">0</div>
+      <div class="stat-label">Enterprises Created</div>
+    </div>
+    <div class="stat-item animate-on-scroll animate-delay-3">
+      <div class="stat-icon"><i class="fas fa-handshake"></i></div>
+      <div class="stat-number" data-count="233">0</div>
+      <div class="stat-label">Connected to Employers</div>
+    </div>
+    <div class="stat-item animate-on-scroll animate-delay-4">
+      <div class="stat-icon"><i class="fas fa-users"></i></div>
+      <div class="stat-number" data-count="1200" data-suffix="+">0</div>
+      <div class="stat-label">Jobs Created</div>
+    </div>
+    <div class="stat-item animate-on-scroll animate-delay-5">
+      <div class="stat-icon"><i class="fas fa-leaf"></i></div>
+      <div class="stat-number" data-count="15" data-suffix="+">0</div>
+      <div class="stat-label">Communities Impacted</div>
+    </div>
+  </div>
+</section>
+
+<!-- Impact Areas -->
+<section class="section section-gray">
+  <div class="container">
+    <h2 class="section-title animate-on-scroll">Impact <span class="accent">Areas</span></h2>
+    <div class="title-underline animate-on-scroll"></div>
+
+    <div class="accordion-item animate-on-scroll animate-delay-1">
+      <div class="accordion-header">
+        <div class="acc-icon green"><i class="fas fa-briefcase"></i></div>
+        <h4>Job Creation &amp; Employment</h4>
+        <i class="fas fa-chevron-down acc-toggle"></i>
+      </div>
+      <div class="accordion-body">
+        <p>We create direct and indirect employment opportunities through the enterprises we build. From manufacturing roles to service delivery positions, each venture generates decent work for youth, women, and vulnerable populations. Our training programs equip beneficiaries with practical skills that increase their employability and earning potential.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item animate-on-scroll animate-delay-2">
+      <div class="accordion-header">
+        <div class="acc-icon blue"><i class="fas fa-chart-line"></i></div>
+        <h4>Productivity Improvement</h4>
+        <i class="fas fa-chevron-down acc-toggle"></i>
+      </div>
+      <div class="accordion-body">
+        <p>Our technologies and innovations are designed to increase productivity across key sectors. From agricultural equipment that reduces labor and post-harvest losses to digital tools that streamline business operations, we help individuals and enterprises achieve more with less.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item animate-on-scroll animate-delay-3">
+      <div class="accordion-header">
+        <div class="acc-icon dark-green"><i class="fas fa-seedling"></i></div>
+        <h4>Environmental Sustainability</h4>
+        <i class="fas fa-chevron-down acc-toggle"></i>
+      </div>
+      <div class="accordion-body">
+        <p>Every technology and enterprise we develop considers environmental impact. We prioritize green technologies, renewable energy, circular economy principles, and climate-resilient solutions that protect natural resources while creating economic value.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item animate-on-scroll animate-delay-4">
+      <div class="accordion-header">
+        <div class="acc-icon navy"><i class="fas fa-hands-holding-child"></i></div>
+        <h4>Inclusive Economic Growth</h4>
+        <i class="fas fa-chevron-down acc-toggle"></i>
+      </div>
+      <div class="accordion-body">
+        <p>We intentionally design programs and enterprises to include underserved and vulnerable groups. By creating opportunities for women, youth, refugees, persons with disabilities, and rural communities, we contribute to more equitable and inclusive economic development across Ethiopia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Success Stories -->
+<section class="section section-white">
+  <div class="container">
+    <h2 class="section-title animate-on-scroll">Success <span class="accent">Stories</span></h2>
+    <div class="title-underline animate-on-scroll"></div>
+    <div class="news-grid">
+      <div class="news-card animate-on-scroll animate-delay-1">
+        <img src="{% static 'images/placeholder-project.jpg' %}" alt="Youth Training Program" loading="lazy">
+        <div class="news-body">
+          <div class="news-date">Training &amp; Skills</div>
+          <h3>432 Youth Trained in Green Technologies</h3>
+          <p>Through 45 training batches, we equipped young Ethiopians with practical skills in renewable energy, sustainable manufacturing, and digital innovation — creating a pipeline of skilled workers for the green economy.</p>
+        </div>
+      </div>
+      <div class="news-card animate-on-scroll animate-delay-2">
+        <img src="{% static 'images/placeholder-project.jpg' %}" alt="Enterprise Creation" loading="lazy">
+        <div class="news-body">
+          <div class="news-date">Enterprise Building</div>
+          <h3>35 Sustainable Enterprises Launched</h3>
+          <p>From agro-processing cooperatives to renewable energy startups, our ventures are creating jobs, generating income, and solving real community challenges across 15+ communities.</p>
+        </div>
+      </div>
+      <div class="news-card animate-on-scroll animate-delay-3">
+        <img src="{% static 'images/placeholder-project.jpg' %}" alt="Community Impact" loading="lazy">
+        <div class="news-body">
+          <div class="news-date">Community Impact</div>
+          <h3>1,200+ Jobs Created Across Ethiopia</h3>
+          <p>Our Innovation-to-Livelihood approach has generated over 1,200 direct and indirect jobs, with 233 trainees successfully connected to employers and enterprise opportunities.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,276 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Sigma EcoBuild &amp; Innovation — Social Innovation Venture Studio in Ethiopia{% endblock %}
+{% block meta_description %}Sigma EcoBuild & Innovation is a Social Innovation Venture Studio that transforms market challenges into enterprises that create jobs, improve productivity, and reduce poverty across Ethiopia.{% endblock %}
+{% block canonical %}https://www.sigmaecobuild.com/{% endblock %}
+{% block og_tags %}
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sigma EcoBuild & Innovation — Social Innovation Venture Studio">
+<meta property="og:description" content="Transforming market challenges into innovative enterprises that create jobs and reduce poverty across Ethiopia.">
+<meta property="og:image" content="{% static 'images/og-image.jpg' %}">
+<meta property="og:url" content="https://www.sigmaecobuild.com/">
+<meta name="twitter:card" content="summary_large_image">
+{% endblock %}
+
+{% block content %}
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-deco-1" aria-hidden="true"></div>
+  <div class="hero-deco-2" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="label">Social Innovation Venture Studio</span>
+    </div>
+    <h1 class="hero-title">Sigma EcoBuild<br>&amp; <span class="highlight">Innovation</span></h1>
+    <p class="hero-lead">
+      We transform market challenges into <strong>innovative enterprises</strong> capable of
+      creating jobs, improving productivity, reducing poverty, and strengthening local
+      industries across Ethiopia.
+    </p>
+    <p class="hero-sub">
+      Rather than waiting for startups to emerge, we proactively identify unmet market
+      needs, develop practical technologies, validate business models, and build scalable
+      enterprises that generate measurable social, economic, and environmental impact.
+    </p>
+    <div class="hero-buttons">
+      <a href="{% url 'projects' %}" class="btn-primary"><i class="fas fa-rocket" aria-hidden="true"></i> Explore Our Work</a>
+      <a href="{% url 'about' %}" class="btn-secondary"><i class="fas fa-play-circle" aria-hidden="true"></i> About Sigma</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-number" data-count="432" data-suffix="+">0</div>
+        <div class="hero-stat-label">Youth Trained</div>
+      </div>
+      <div>
+        <div class="hero-stat-number" data-count="35">0</div>
+        <div class="hero-stat-label">Enterprises Built</div>
+      </div>
+      <div>
+        <div class="hero-stat-number" data-count="1200" data-suffix="+">0</div>
+        <div class="hero-stat-label">Jobs Created</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual" aria-hidden="true">
+    <div class="hero-orbit">
+      <div class="hero-orbit-circle"></div>
+      <div class="hero-logo-text">
+        <div class="sigma-symbol">&Sigma;</div>
+        <div class="sigma-name">SIGMA <span class="eco">ECOBUILD</span></div>
+      </div>
+      <div class="orbit-icon top"><i class="fas fa-lightbulb"></i></div>
+      <div class="orbit-icon right"><i class="fas fa-cogs"></i></div>
+      <div class="orbit-icon bottom"><i class="fas fa-seedling"></i></div>
+      <div class="orbit-icon left"><i class="fas fa-users"></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT PREVIEW ===== -->
+<section class="section section-green">
+  <div class="container">
+    <h2 class="section-title animate-on-scroll">About <span class="accent">Sigma</span></h2>
+    <div class="title-underline animate-on-scroll"></div>
+
+    <div class="about-intro animate-on-scroll">
+      <h3>Building Innovation That Creates Jobs and Changes Lives</h3>
+      <p>Sigma EcoBuild &amp; Innovation is a Social Innovation Venture Studio that transforms
+      market challenges into innovative enterprises capable of creating jobs, improving
+      productivity, reducing poverty, and strengthening local industries. Rather than waiting
+      for startups to emerge, Sigma proactively identifies unmet market needs, develops
+      practical technologies, validates business models, and builds scalable enterprises
+      that generate measurable social, economic, and environmental impact.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-card animate-on-scroll animate-delay-1">
+        <div class="about-card-icon blue"><i class="fas fa-question-circle" aria-hidden="true"></i></div>
+        <h4>Why Sigma Was Established</h4>
+        <p>Discover the systemic barriers our founders experienced and why we created a new venture development model.</p>
+        <a href="{% url 'about' %}#why-sigma" class="btn-card blue">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="about-card animate-on-scroll animate-delay-2">
+        <div class="about-card-icon green"><i class="fas fa-star" aria-hidden="true"></i></div>
+        <h4>What Makes Sigma Different</h4>
+        <p>We don't wait for entrepreneurs. We proactively identify challenges and build enterprises from the ground up.</p>
+        <a href="{% url 'about' %}#what-makes-us-different" class="btn-card green">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="about-card animate-on-scroll animate-delay-3">
+        <div class="about-card-icon dark-green"><i class="fas fa-shield-halved" aria-hidden="true"></i></div>
+        <h4>We De-Risk Innovation</h4>
+        <p>As an Innovation Ecosystem Orchestrator, we reduce risks so innovators can focus on solving real problems.</p>
+        <a href="{% url 'about' %}#de-risk" class="btn-card dark-green">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="about-card animate-on-scroll animate-delay-4">
+        <div class="about-card-icon navy"><i class="fas fa-sitemap" aria-hidden="true"></i></div>
+        <h4>Our Venture-Building Model</h4>
+        <p>Explore our unique Innovation-to-Livelihood Venture Studio pathway from challenge to sustainable enterprise.</p>
+        <a href="{% url 'about' %}#venture-model" class="btn-card navy">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+
+    <div class="about-fullwidth animate-on-scroll">
+      <h4>Who We Serve</h4>
+      <p>Sigma develops enterprises that create opportunities for youth, women, engineers,
+      farmers, refugees, persons with disabilities, cooperatives, local industries, and
+      development partners.</p>
+      <a href="{% url 'about' %}#who-we-serve" class="btn-green">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+
+    <div class="about-fullwidth animate-on-scroll">
+      <h4>Our Impact Vision</h4>
+      <p>Every venture Sigma builds is designed to create measurable and lasting impact
+      through job creation, enterprise building, productivity improvement, technology
+      development, and inclusive economic growth.</p>
+      <a href="{% url 'impact' %}" class="btn-green">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+
+    <div class="about-fullwidth green-bg animate-on-scroll">
+      <h4>Our Purpose</h4>
+      <p>Sigma exists because innovation alone does not reduce poverty, and entrepreneurship
+      alone does not solve structural unemployment. What creates lasting change is building
+      sustainable enterprises around practical innovations.</p>
+      <a href="{% url 'about' %}#our-purpose" class="btn-white">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CORE VALUES ===== -->
+<section class="section section-white">
+  <div class="container">
+    <h2 class="section-title animate-on-scroll">Our <span class="accent">Core Values</span></h2>
+    <div class="title-underline animate-on-scroll"></div>
+    <div class="core-values-grid">
+      <div class="core-value-card animate-on-scroll animate-delay-1">
+        <div class="core-value-icon"><i class="fas fa-bullseye" aria-hidden="true"></i></div>
+        <h4>Innovation with Purpose</h4>
+        <p>We develop practical technologies and enterprise solutions that solve real-world challenges, create opportunities, and improve people's lives.</p>
+      </div>
+      <div class="core-value-card animate-on-scroll animate-delay-1">
+        <div class="core-value-icon"><i class="fas fa-hands-holding-circle" aria-hidden="true"></i></div>
+        <h4>Inclusive Impact</h4>
+        <p>We believe innovation should benefit everyone. We intentionally create opportunities for women, youth, engineers, TVET graduates, smallholder farmers, vulnerable communities, and underserved populations.</p>
+      </div>
+      <div class="core-value-card animate-on-scroll animate-delay-2">
+        <div class="core-value-icon"><i class="fas fa-rocket" aria-hidden="true"></i></div>
+        <h4>Venture Building</h4>
+        <p>We go beyond supporting startups—we co-create ventures, transform ideas into sustainable enterprises, and build businesses that generate lasting economic and social value.</p>
+      </div>
+      <div class="core-value-card animate-on-scroll animate-delay-2">
+        <div class="core-value-icon"><i class="fas fa-handshake" aria-hidden="true"></i></div>
+        <h4>Collaboration &amp; Partnership</h4>
+        <p>We work alongside innovators, researchers, industry, government, academia, investors, and development partners because meaningful innovation is built through collaboration.</p>
+      </div>
+      <div class="core-value-card animate-on-scroll animate-delay-3">
+        <div class="core-value-icon"><i class="fas fa-fire" aria-hidden="true"></i></div>
+        <h4>Courage to Innovate</h4>
+        <p>We embrace uncertainty, experiment with new ideas, and systematically de-risk innovation to turn bold concepts into practical solutions.</p>
+      </div>
+      <div class="core-value-card animate-on-scroll animate-delay-3">
+        <div class="core-value-icon"><i class="fas fa-cogs" aria-hidden="true"></i></div>
+        <h4>Engineering Excellence</h4>
+        <p>We apply research, engineering, design, and technology to develop reliable, high-quality solutions that strengthen local industries and increase productivity.</p>
+      </div>
+      <div class="core-value-card animate-on-scroll animate-delay-4">
+        <div class="core-value-icon"><i class="fas fa-globe" aria-hidden="true"></i></div>
+        <h4>Local Solutions, Global Standards</h4>
+        <p>We develop technologies that respond to Ethiopia's unique challenges while applying international best practices in innovation, quality, and sustainability.</p>
+      </div>
+      <div class="core-value-card animate-on-scroll animate-delay-4">
+        <div class="core-value-icon"><i class="fas fa-leaf" aria-hidden="true"></i></div>
+        <h4>Sustainability</h4>
+        <p>Every technology and enterprise we build is designed to generate long-term economic, social, and environmental value.</p>
+      </div>
+      <div class="core-value-card animate-on-scroll animate-delay-5">
+        <div class="core-value-icon"><i class="fas fa-shield-halved" aria-hidden="true"></i></div>
+        <h4>Integrity &amp; Accountability</h4>
+        <p>We operate with transparency, professionalism, ethical leadership, and accountability to our partners, beneficiaries, and communities.</p>
+      </div>
+      <div class="core-value-card animate-on-scroll animate-delay-5">
+        <div class="core-value-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+        <h4>Impact-Driven</h4>
+        <p>We measure success by the problems we solve, the technologies we develop, the enterprises we build, the jobs we create, the productivity we improve, and the lives we transform.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PATHWAYS ===== -->
+<section class="section section-gray">
+  <h2 class="section-title animate-on-scroll">Our Three <span class="accent">Integrated Venture-Building Pathways</span></h2>
+  <div class="title-underline animate-on-scroll"></div>
+  <div class="pathways-grid">
+    <div class="pathway-card animate-on-scroll animate-delay-1">
+      <div class="pathway-icon blue"><i class="fas fa-lightbulb" aria-hidden="true"></i></div>
+      <h3 class="pathway-title">1. Proactive Opportunity-Driven<br>Enterprise Creation</h3>
+      <p class="pathway-desc">We identify unmet market needs before startups exist, then design, validate, and launch enterprises to serve them.</p>
+      <a href="{% url 'what_we_do' %}#pathway-1" class="btn-card blue">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+    <div class="pathway-card animate-on-scroll animate-delay-2">
+      <div class="pathway-icon green"><i class="fas fa-users" aria-hidden="true"></i></div>
+      <h3 class="pathway-title">2. Venture Building for<br>Early-Stage Technopreneurs</h3>
+      <p class="pathway-desc">We co-build with founders and innovators, providing the structure, mentorship, and market linkages young ventures need to scale.</p>
+      <a href="{% url 'what_we_do' %}#pathway-2" class="btn-card green">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+    <div class="pathway-card animate-on-scroll animate-delay-3">
+      <div class="pathway-icon dark-green"><i class="fas fa-leaf" aria-hidden="true"></i></div>
+      <h3 class="pathway-title">3. Technology Innovation, Industrialization &amp; Engineering Enterprise Development</h3>
+      <p class="pathway-desc">We develop and industrialize practical technologies that strengthen local manufacturing and increase productivity.</p>
+      <a href="{% url 'what_we_do' %}#pathway-3" class="btn-card dark-green">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOCUS AREAS ===== -->
+<section class="focus-areas">
+  <h2 class="section-title animate-on-scroll">Our <span class="accent">Focus Areas</span></h2>
+  <div class="focus-grid">
+    <div class="focus-item animate-on-scroll animate-delay-1"><div class="focus-icon"><i class="fas fa-seedling" aria-hidden="true"></i></div><div class="focus-label">Green<br>Technologies</div></div>
+    <div class="focus-item animate-on-scroll animate-delay-1"><div class="focus-icon"><i class="fas fa-solar-panel" aria-hidden="true"></i></div><div class="focus-label">Renewable<br>Energy</div></div>
+    <div class="focus-item animate-on-scroll animate-delay-2"><div class="focus-icon"><i class="fas fa-plant-wilt" aria-hidden="true"></i></div><div class="focus-label">Agriculture &amp;<br>Agro-processing</div></div>
+    <div class="focus-item animate-on-scroll animate-delay-2"><div class="focus-icon"><i class="fas fa-industry" aria-hidden="true"></i></div><div class="focus-label">Sustainable<br>Manufacturing</div></div>
+    <div class="focus-item animate-on-scroll animate-delay-3"><div class="focus-icon"><i class="fas fa-recycle" aria-hidden="true"></i></div><div class="focus-label">Circular<br>Economy</div></div>
+    <div class="focus-item animate-on-scroll animate-delay-3"><div class="focus-icon"><i class="fas fa-lightbulb" aria-hidden="true"></i></div><div class="focus-label">Digital<br>Innovation</div></div>
+    <div class="focus-item animate-on-scroll animate-delay-4"><div class="focus-icon"><i class="fas fa-city" aria-hidden="true"></i></div><div class="focus-label">Urban<br>Development</div></div>
+    <div class="focus-item animate-on-scroll animate-delay-4"><div class="focus-icon"><i class="fas fa-globe-americas" aria-hidden="true"></i></div><div class="focus-label">Climate<br>Solutions</div></div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="section section-white">
+  <h2 class="section-title animate-on-scroll">Our Impact <span class="accent">So Far</span></h2>
+  <div class="title-underline animate-on-scroll"></div>
+  <div class="stats-grid">
+    <div class="stat-item animate-on-scroll animate-delay-1">
+      <div class="stat-icon"><i class="fas fa-graduation-cap" aria-hidden="true"></i></div>
+      <div class="stat-number" data-count="432">0</div>
+      <div class="stat-label">Trained</div>
+      <div class="stat-sublabel">in 45 Batches</div>
+    </div>
+    <div class="stat-item animate-on-scroll animate-delay-2">
+      <div class="stat-icon"><i class="fas fa-building" aria-hidden="true"></i></div>
+      <div class="stat-number" data-count="35">0</div>
+      <div class="stat-label">Enterprises<br>Created</div>
+    </div>
+    <div class="stat-item animate-on-scroll animate-delay-3">
+      <div class="stat-icon"><i class="fas fa-handshake" aria-hidden="true"></i></div>
+      <div class="stat-number" data-count="233">0</div>
+      <div class="stat-label">Connected to<br>Employers</div>
+    </div>
+    <div class="stat-item animate-on-scroll animate-delay-4">
+      <div class="stat-icon"><i class="fas fa-users" aria-hidden="true"></i></div>
+      <div class="stat-number" data-count="1200" data-suffix="+">0</div>
+      <div class="stat-label">Jobs<br>Created</div>
+    </div>
+    <div class="stat-item animate-on-scroll animate-delay-5">
+      <div class="stat-icon"><i class="fas fa-leaf" aria-hidden="true"></i></div>
+      <div class="stat-number" data-count="15" data-suffix="+">0</div>
+      <div class="stat-label">Communities<br>Impacted</div>
+    </div>
+  </div>
+</section>
+{% endblock %}

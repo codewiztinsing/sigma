@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Partners — Sigma EcoBuild &amp; Innovation{% endblock %}
+{% block meta_description %}Partner with Sigma EcoBuild & Innovation to support innovation, enterprise building, and sustainable livelihood creation across Ethiopia.{% endblock %}
+{% block canonical %}https://www.sigmaecobuild.com/partners.html{% endblock %}
+{% block og_tags %}{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="breadcrumb"><a href="{% url 'home' %}">Home</a> / Partners</div>
+  <h1>Our <span class="accent">Partners</span></h1>
+  <p>We collaborate with government agencies, universities, research institutions, development partners, and private sector organizations to build an inclusive innovation ecosystem.</p>
+</section>
+
+<!-- Partner Types -->
+<section class="section section-white">
+  <div class="container">
+    <h2 class="section-title animate-on-scroll">Partner <span class="accent">With Us</span></h2>
+    <div class="title-underline animate-on-scroll"></div>
+    <div class="benefit-grid">
+      {% for category in partner_categories %}
+      <div class="benefit-card animate-on-scroll animate-delay-{% cycle '1' '2' '3' %}">
+        <div class="core-value-icon"><i class="{{ category.icon_class }}"></i></div>
+        <h4>{{ category.title }}</h4>
+        <p>{{ category.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Partnership Benefits -->
+<section class="section section-gray">
+  <div class="container-narrow">
+    <h2 class="section-title animate-on-scroll">Why <span class="accent">Partner</span> With Sigma?</h2>
+    <div class="title-underline animate-on-scroll"></div>
+    <div class="prose animate-on-scroll">
+      <p><strong>Sigma serves as an Innovation Ecosystem Orchestrator</strong> — we don't try to do everything alone. Instead, we coordinate and mobilize the capabilities of diverse partners to create outcomes no single organization could achieve independently.</p>
+      <h3>What Partners Gain</h3>
+      <ul>
+        <li><strong>Access to Innovations:</strong> Early access to technologies and enterprises developed through our programs.</li>
+        <li><strong>Pipeline of Talent:</strong> Connection to trained youth, engineers, and entrepreneurs ready for employment or investment.</li>
+        <li><strong>Market Insights:</strong> Deep understanding of community needs, market gaps, and opportunities across Ethiopia.</li>
+        <li><strong>Shared Impact:</strong> Measurable outcomes in job creation, enterprise development, and inclusive growth.</li>
+        <li><strong>Network Expansion:</strong> Connection to a broad ecosystem of innovators, institutions, and development actors.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

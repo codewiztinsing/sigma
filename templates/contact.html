@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us — Sigma EcoBuild &amp; Innovation{% endblock %}
+{% block meta_description %}Get in touch with Sigma EcoBuild & Innovation. We'd love to hear from you about partnerships, projects, or any inquiries.{% endblock %}
+{% block canonical %}https://www.sigmaecobuild.com/contact.html{% endblock %}
+{% block og_tags %}{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="breadcrumb"><a href="{% url 'home' %}">Home</a> / Contact</div>
+  <h1>Contact <span class="accent">Us</span></h1>
+  <p>Have a question, idea, or partnership proposal? We'd love to hear from you. Reach out and let's start a conversation.</p>
+</section>
+
+<section class="section section-white">
+  <div class="container">
+    <div class="contact-layout">
+      <div class="form-card animate-on-scroll">
+        <h3 style="font-size: 20px; color: var(--sigma-blue); margin-bottom: 24px;">Send Us a Message</h3>
+        {% if success %}
+        <p class="form-note" style="color: var(--sigma-green); font-weight: 600;"><i class="fas fa-circle-check"></i> Thank you — your message has been sent. We'll get back to you soon.</p>
+        {% endif %}
+        {% if errors %}
+        <p class="form-note" style="color: #c0392b; font-weight: 600;">
+          {% for error in errors %}{{ error }}{% if not forloop.last %}<br>{% endif %}{% endfor %}
+        </p>
+        {% endif %}
+        <form action="{% url 'contact' %}" method="POST" data-validate>
+          {% csrf_token %}
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Full Name <span class="req">*</span></label>
+              <input type="text" id="name" name="name" required placeholder="Your full name" value="{{ form_data.name|default:'' }}">
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address <span class="req">*</span></label>
+              <input type="email" id="email" name="email" required placeholder="your@email.com" value="{{ form_data.email|default:'' }}">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+251 912 092 968" value="{{ form_data.phone|default:'' }}">
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject <span class="req">*</span></label>
+              <select id="subject" name="subject" required>
+                <option value="">Select a subject</option>
+                <option value="partnership" {% if form_data.subject == 'partnership' %}selected{% endif %}>Partnership Inquiry</option>
+                <option value="project" {% if form_data.subject == 'project' %}selected{% endif %}>Project Proposal</option>
+                <option value="training" {% if form_data.subject == 'training' %}selected{% endif %}>Training Inquiry</option>
+                <option value="media" {% if form_data.subject == 'media' %}selected{% endif %}>Media & Press</option>
+                <option value="general" {% if form_data.subject == 'general' %}selected{% endif %}>General Inquiry</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label for="message">Message <span class="req">*</span></label>
+              <textarea id="message" name="message" required placeholder="Tell us about your inquiry...">{{ form_data.message|default:'' }}</textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn-green" style="margin-top: 10px;">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+          <p class="form-note">We typically respond within 2 business days. For urgent matters, please call us directly.</p>
+        </form>
+      </div>
+
+      <div class="contact-info-card animate-on-scroll animate-delay-2">
+        <h3>Contact Information</h3>
+        <div class="contact-info-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <div class="info-label">Email</div>
+            <div class="info-value"><a href="mailto:info@sigmaecobuild.com" style="color: rgba(255,255,255,0.9); text-decoration: none;">info@sigmaecobuild.com</a></div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <i class="fas fa-phone"></i>
+          <div>
+            <div class="info-label">Phone</div>
+            <div class="info-value"><a href="tel:+251912092968" style="color: rgba(255,255,255,0.9); text-decoration: none;">+251 912 092 968</a></div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <i class="fas fa-location-dot"></i>
+          <div>
+            <div class="info-label">Address</div>
+            <div class="info-value">Addis Ababa, Ethiopia</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <i class="fas fa-clock"></i>
+          <div>
+            <div class="info-label">Working Hours</div>
+            <div class="info-value">Monday – Friday<br>8:30 AM – 5:30 PM EAT</div>
+          </div>
+        </div>
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+          <div class="info-label" style="margin-bottom: 12px;">Follow Us</div>
+          <div style="display: flex; gap: 12px;">
+            <a href="#" style="width: 38px; height: 38px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.3s;"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" style="width: 38px; height: 38px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.3s;"><i class="fab fa-twitter"></i></a>
+            <a href="#" style="width: 38px; height: 38px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.3s;"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

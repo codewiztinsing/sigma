@@ -1,0 +1,118 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}Sigma EcoBuild &amp; Innovation — Social Innovation Venture Studio in Ethiopia{% endblock %}</title>
+<meta name="description" content="{% block meta_description %}Sigma EcoBuild & Innovation is a Social Innovation Venture Studio that transforms market challenges into enterprises that create jobs, improve productivity, and reduce poverty across Ethiopia.{% endblock %}">
+<link rel="canonical" href="{% block canonical %}https://www.sigmaecobuild.com/{% endblock %}">
+{% block og_tags %}
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sigma EcoBuild & Innovation — Social Innovation Venture Studio">
+<meta property="og:description" content="Transforming market challenges into innovative enterprises that create jobs and reduce poverty across Ethiopia.">
+<meta property="og:image" content="{% static 'images/og-image.jpg' %}">
+<meta property="og:url" content="https://www.sigmaecobuild.com/">
+<meta name="twitter:card" content="summary_large_image">
+{% endblock %}
+<link rel="icon" href="{% static 'images/favicon.png' %}" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+<!-- Loading Overlay -->
+<div class="loading-overlay">
+  <div class="spinner"></div>
+</div>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" aria-label="Main navigation">
+  <a href="{% url 'home' %}" class="logo-link" aria-label="Sigma EcoBuild and Innovation — Home">
+    <div class="logo-section">
+      <span class="logo-text">SIGMA<span class="leaf">.</span></span>
+      <span class="logo-sub">ECO<span class="eco">BUILD</span> &amp; INNOVATION</span>
+      <span class="tagline">Innovating for Sustainable Livelihoods</span>
+    </div>
+  </a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+  <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+  <ul class="nav-links">
+    <li><a href="{% url 'home' %}"{% if active_page == 'home' %} class="active" aria-current="page"{% endif %}>Home</a></li>
+    <li><a href="{% url 'about' %}"{% if active_page == 'about' %} class="active" aria-current="page"{% endif %}>About Us</a></li>
+    <li><a href="{% url 'what_we_do' %}"{% if active_page == 'what_we_do' %} class="active" aria-current="page"{% endif %}>What We Do</a></li>
+    <li><a href="{% url 'impact' %}"{% if active_page == 'impact' %} class="active" aria-current="page"{% endif %}>Our Impact</a></li>
+    <li><a href="{% url 'projects' %}"{% if active_page == 'projects' %} class="active" aria-current="page"{% endif %}>Projects</a></li>
+    <li><a href="{% url 'partners' %}"{% if active_page == 'partners' %} class="active" aria-current="page"{% endif %}>Partners</a></li>
+    <li><a href="{% url 'news' %}"{% if active_page == 'news' %} class="active" aria-current="page"{% endif %}>News</a></li>
+    <li><a href="{% url 'contact' %}"{% if active_page == 'contact' %} class="active" aria-current="page"{% endif %}>Contact</a></li>
+    <li><a href="{% url 'partner' %}" class="btn-partner">Partner With Us</a></li>
+  </ul>
+</nav>
+
+<main id="main">
+{% block content %}{% endblock %}
+</main>
+
+<!-- ===== FOOTER CTA ===== -->
+<section class="footer-cta">
+  <div class="footer-cta-content">
+    <h3>Let's Build Sustainable Enterprises Together.</h3>
+    <p>Partner with us to innovate, empower, and create lasting impact.</p>
+  </div>
+  <div class="footer-cta-buttons">
+    <a href="{% url 'partner' %}" class="btn-footer btn-footer-primary">Partner With Us</a>
+    <a href="{% url 'contact' %}" class="btn-footer btn-footer-secondary">Contact Us</a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="logo-text">SIGMA<span class="leaf">.</span></span>
+      <p>A Social Innovation Venture Studio transforming market challenges into enterprises
+      that create jobs and reduce poverty across Ethiopia.</p>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <ul>
+        <li><a href="{% url 'about' %}">About Us</a></li>
+        <li><a href="{% url 'what_we_do' %}">What We Do</a></li>
+        <li><a href="{% url 'impact' %}">Our Impact</a></li>
+        <li><a href="{% url 'projects' %}">Projects</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Connect</h5>
+      <ul>
+        <li><a href="{% url 'partners' %}">Partners</a></li>
+        <li><a href="{% url 'news' %}">News</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+        <li><a href="{% url 'partner' %}">Partner With Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="mailto:info@sigmaecobuild.com">info@sigmaecobuild.com</a></li>
+        <li><a href="tel:+251912092968">+251 912 092 968</a></li>
+        <li>Addis Ababa, Ethiopia</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; <span class="current-year">2026</span> Sigma EcoBuild &amp; Innovation. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

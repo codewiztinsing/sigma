@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}News — Sigma EcoBuild &amp; Innovation{% endblock %}
+{% block meta_description %}Latest news, updates, and stories from Sigma EcoBuild & Innovation's work in enterprise building and technology development across Ethiopia.{% endblock %}
+{% block canonical %}https://www.sigmaecobuild.com/news.html{% endblock %}
+{% block og_tags %}{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="breadcrumb"><a href="{% url 'home' %}">Home</a> / News</div>
+  <h1>Latest <span class="accent">News</span></h1>
+  <p>Stay updated on our latest projects, partnerships, and impact stories from across Ethiopia.</p>
+</section>
+
+<section class="section section-white">
+  <div class="container">
+    <div class="news-grid">
+      {% for post in posts %}
+      <div class="news-card animate-on-scroll animate-delay-{% cycle '1' '2' '3' %}">
+        <img src="{% if post.image %}{{ post.image.url }}{% else %}{% static 'images/placeholder-news.jpg' %}{% endif %}" alt="{{ post.title }}" loading="lazy">
+        <div class="news-body">
+          <div class="news-date">{{ post.published_at|date:"F Y" }}</div>
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.excerpt }}</p>
+          <a href="{% url 'news_detail' post.slug %}" class="learn-more">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

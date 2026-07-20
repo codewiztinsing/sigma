@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Projects — Sigma EcoBuild &amp; Innovation{% endblock %}
+{% block meta_description %}Explore Sigma EcoBuild & Innovation's portfolio of projects in green technologies, renewable energy, agriculture, and sustainable manufacturing across Ethiopia.{% endblock %}
+{% block canonical %}https://www.sigmaecobuild.com/projects.html{% endblock %}
+{% block og_tags %}{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="breadcrumb"><a href="{% url 'home' %}">Home</a> / Projects</div>
+  <h1>Our <span class="accent">Projects</span></h1>
+  <p>Discover how we transform market challenges into innovative enterprises through technology development, enterprise building, and ecosystem support.</p>
+</section>
+
+<!-- Featured Project -->
+<section class="section section-white">
+  <div class="container">
+    <h2 class="section-title animate-on-scroll">Featured <span class="accent">Project</span></h2>
+    <div class="title-underline animate-on-scroll"></div>
+    <div class="project-highlight animate-on-scroll">
+      <div class="project-highlight-flex">
+        <div class="project-highlight-body">
+          <span class="badge green">Flagship Initiative</span>
+          <h3>Innovation-to-Livelihood Venture Studio</h3>
+          <p>Our flagship program transforms community livelihood challenges into sustainable enterprises through a systematic eight-stage process. From identifying unmet needs to scaling proven models, we build businesses that create jobs and improve lives.</p>
+          <p><strong>Impact:</strong> 35 enterprises created, 1,200+ jobs generated, 15+ communities reached.</p>
+          <div class="mini-stats">
+            <div><div class="mini-stat-number">35</div><div class="mini-stat-label">Enterprises</div></div>
+            <div><div class="mini-stat-number">1,200+</div><div class="mini-stat-label">Jobs</div></div>
+            <div><div class="mini-stat-number">15+</div><div class="mini-stat-label">Communities</div></div>
+          </div>
+          <a href="{% url 'impact' %}" class="btn-green">View Impact <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="project-highlight-image">
+          <img src="{% static 'images/placeholder-featured.jpg' %}" alt="Innovation-to-Livelihood Venture Studio" loading="lazy">
+          <div class="project-highlight-caption">
+            <div class="cap-title">Innovation-to-Livelihood</div>
+            <div class="cap-sub">Transforming challenges into enterprises</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Project Grid with Filters -->
+<section class="section section-gray">
+  <div class="container">
+    <h2 class="section-title animate-on-scroll">Project <span class="accent">Portfolio</span></h2>
+    <div class="title-underline animate-on-scroll"></div>
+
+    <div class="tab-buttons animate-on-scroll" style="justify-content: center; margin-bottom: 30px;">
+      <button class="tab-btn active filter-btn" data-filter="all">All Projects</button>
+      <button class="tab-btn filter-btn" data-filter="green">Green Tech</button>
+      <button class="tab-btn filter-btn" data-filter="agriculture">Agriculture</button>
+      <button class="tab-btn filter-btn" data-filter="energy">Energy</button>
+      <button class="tab-btn filter-btn" data-filter="manufacturing">Manufacturing</button>
+    </div>
+
+    <div class="projects-grid three-col">
+      <div class="project-card filter-item animate-on-scroll animate-delay-1" data-category="green">
+        <img src="{% static 'images/placeholder-project.jpg' %}" alt="Waste-to-Value Initiative" class="project-image" loading="lazy">
+        <div class="project-content">
+          <span class="badge-sm green">Circular Economy</span>
+          <h4 class="project-title">Waste-to-Value Initiative</h4>
+          <p class="project-desc">Transforming agricultural and plastic waste into valuable products through innovative recycling and upcycling technologies.</p>
+          <div class="focus-tags-box">
+            <div class="focus-tags-title">Focus Areas</div>
+            <div class="focus-tags"><span>Recycling</span><span>Green Manufacturing</span></div>
+          </div>
+          <div class="project-location"><i class="fas fa-map-marker-alt"></i> Addis Ababa</div>
+        </div>
+      </div>
+
+      <div class="project-card filter-item animate-on-scroll animate-delay-2" data-category="agriculture">
+        <img src="{% static 'images/placeholder-project.jpg' %}" alt="Solar-Powered Irrigation" class="project-image" loading="lazy">
+        <div class="project-content">
+          <span class="badge-sm blue">Agro-processing</span>
+          <h4 class="project-title">Solar-Powered Irrigation Systems</h4>
+          <p class="project-desc">Affordable solar irrigation solutions that increase crop yields, reduce water waste, and improve farmer incomes.</p>
+          <div class="focus-tags-box">
+            <div class="focus-tags-title">Focus Areas</div>
+            <div class="focus-tags"><span>Renewable Energy</span><span>Agriculture</span></div>
+          </div>
+          <div class="project-location"><i class="fas fa-map-marker-alt"></i> Oromia Region</div>
+        </div>
+      </div>
+
+      <div class="project-card filter-item animate-on-scroll animate-delay-3" data-category="energy">
+        <img src="{% static 'images/placeholder-project.jpg' %}" alt="Biogas Digesters" class="project-image" loading="lazy">
+        <div class="project-content">
+          <span class="badge-sm dark-green">Clean Energy</span>
+          <h4 class="project-title">Community Biogas Digesters</h4>
+          <p class="project-desc">Household and community-scale biogas systems that convert organic waste into clean cooking fuel and organic fertilizer.</p>
+          <div class="focus-tags-box">
+            <div class="focus-tags-title">Focus Areas</div>
+            <div class="focus-tags"><span>Biogas</span><span>Rural Development</span></div>
+          </div>
+          <div class="project-location"><i class="fas fa-map-marker-alt"></i> Amhara Region</div>
+        </div>
+      </div>
+
+      <div class="project-card filter-item animate-on-scroll animate-delay-1" data-category="manufacturing">
+        <img src="{% static 'images/placeholder-project.jpg' %}" alt="Sustainable Building Materials" class="project-image" loading="lazy">
+        <div class="project-content">
+          <span class="badge-sm blue">Construction</span>
+          <h4 class="project-title">Eco-Friendly Building Materials</h4>
+          <p class="project-desc">Developing locally manufactured sustainable construction materials from recycled and natural resources.</p>
+          <div class="focus-tags-box">
+            <div class="focus-tags-title">Focus Areas</div>
+            <div class="focus-tags"><span>Green Construction</span><span>Manufacturing</span></div>
+          </div>
+          <div class="project-location"><i class="fas fa-map-marker-alt"></i> Addis Ababa</div>
+        </div>
+      </div>
+
+      <div class="project-card filter-item animate-on-scroll animate-delay-2" data-category="agriculture">
+        <img src="{% static 'images/placeholder-project.jpg' %}" alt="Post-Harvest Processing" class="project-image" loading="lazy">
+        <div class="project-content">
+          <span class="badge-sm green">Agro-processing</span>
+          <h4 class="project-title">Post-Harvest Processing Equipment</h4>
+          <p class="project-desc">Affordable processing machinery that reduces food losses, improves quality, and increases farmer incomes.</p>
+          <div class="focus-tags-box">
+            <div class="focus-tags-title">Focus Areas</div>
+            <div class="focus-tags"><span>Food Security</span><span>Manufacturing</span></div>
+          </div>
+          <div class="project-location"><i class="fas fa-map-marker-alt"></i> SNNPR</div>
+        </div>
+      </div>
+
+      <div class="project-card filter-item animate-on-scroll animate-delay-3" data-category="green">
+        <img src="{% static 'images/placeholder-project.jpg' %}" alt="Digital Innovation Hub" class="project-image" loading="lazy">
+        <div class="project-content">
+          <span class="badge-sm blue">Digital Innovation</span>
+          <h4 class="project-title">Rural Digital Innovation Hub</h4>
+          <p class="project-desc">Technology centers providing digital skills training, internet access, and innovation support for rural youth and entrepreneurs.</p>
+          <div class="focus-tags-box">
+            <div class="focus-tags-title">Focus Areas</div>
+            <div class="focus-tags"><span>Digital</span><span>Youth Empowerment</span></div>
+          </div>
+          <div class="project-location"><i class="fas fa-map-marker-alt"></i> Multiple Regions</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

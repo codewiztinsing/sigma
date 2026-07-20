@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}Partner With Us — Sigma EcoBuild &amp; Innovation{% endblock %}
+{% block meta_description %}Partner with Sigma EcoBuild & Innovation to support innovation, build enterprises, and create sustainable livelihoods across Ethiopia.{% endblock %}
+{% block canonical %}https://www.sigmaecobuild.com/partner.html{% endblock %}
+{% block og_tags %}{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="breadcrumb"><a href="{% url 'home' %}">Home</a> / Partner With Us</div>
+  <h1>Partner <span class="accent">With Us</span></h1>
+  <p>Join us in transforming innovation into sustainable livelihoods. Whether you're a development partner, investor, institution, or corporation, there's a way to collaborate.</p>
+</section>
+
+<!-- Partnership Types -->
+<section class="section section-white">
+  <div class="container">
+    <h2 class="section-title animate-on-scroll">Partnership <span class="accent">Opportunities</span></h2>
+    <div class="title-underline animate-on-scroll"></div>
+    <div class="benefit-grid">
+      {% for opportunity in partnership_opportunities %}
+      <div class="benefit-card animate-on-scroll animate-delay-{% cycle '1' '2' '3' %}">
+        <div class="core-value-icon"><i class="{{ opportunity.icon_class }}"></i></div>
+        <h4>{{ opportunity.title }}</h4>
+        <p>{{ opportunity.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Partnership Form -->
+<section class="section section-gray">
+  <div class="container">
+    <div class="contact-layout" style="grid-template-columns: 1fr 1fr;">
+      <div class="form-card animate-on-scroll">
+        <h3 style="font-size: 20px; color: var(--sigma-blue); margin-bottom: 8px;">Become a Partner</h3>
+        <p style="font-size: 13px; color: var(--text-gray); margin-bottom: 24px;">Tell us about your organization and how you'd like to collaborate.</p>
+        <form action="#" method="POST" data-validate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="org-name">Organization Name <span class="req">*</span></label>
+              <input type="text" id="org-name" name="org_name" required placeholder="Your organization">
+            </div>
+            <div class="form-group">
+              <label for="contact-name">Contact Person <span class="req">*</span></label>
+              <input type="text" id="contact-name" name="contact_name" required placeholder="Full name">
+            </div>
+            <div class="form-group">
+              <label for="partner-email">Email <span class="req">*</span></label>
+              <input type="email" id="partner-email" name="email" required placeholder="email@organization.com">
+            </div>
+            <div class="form-group">
+              <label for="partner-phone">Phone</label>
+              <input type="tel" id="partner-phone" name="phone" placeholder="+251 912 092 968">
+            </div>
+            <div class="form-group">
+              <label for="partner-type">Partnership Type <span class="req">*</span></label>
+              <select id="partner-type" name="partner_type" required>
+                <option value="">Select type</option>
+                {% for opportunity in partnership_opportunities %}
+                <option value="{{ opportunity.slug }}">{{ opportunity.title }}</option>
+                {% endfor %}
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="org-type">Organization Type</label>
+              <select id="org-type" name="org_type">
+                <option value="">Select type</option>
+                <option value="government">Government</option>
+                <option value="university">University/Research</option>
+                <option value="ngo">NGO/Development Partner</option>
+                <option value="private">Private Sector</option>
+                <option value="financial">Financial Institution</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label for="partner-message">How Would You Like to Partner? <span class="req">*</span></label>
+              <textarea id="partner-message" name="message" required placeholder="Describe your partnership proposal..."></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn-green" style="margin-top: 10px;">
+            <i class="fas fa-paper-plane"></i> Submit Proposal
+          </button>
+        </form>
+      </div>
+
+      <div class="animate-on-scroll animate-delay-2">
+        <div class="about-fullwidth" style="margin-bottom: 30px;">
+          <h4>Why Partner With Sigma?</h4>
+          <p style="color: rgba(255,255,255,0.85);">As an Innovation Ecosystem Orchestrator, Sigma coordinates capabilities across sectors to create outcomes no single organization can achieve alone. Your partnership amplifies impact.</p>
+        </div>
+        <div class="quote-block" style="margin: 0;">
+          <p class="quote-text" style="font-size: 16px;">"Together, we can transform innovation into sustainable livelihoods and build an inclusive economy that works for everyone."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
