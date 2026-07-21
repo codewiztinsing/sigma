@@ -69,6 +69,19 @@ def model_list(request, model_slug):
 
 @login_required(login_url='dashboard_login')
 @user_passes_test(is_staff_user, login_url='dashboard_login')
+def model_detail(request, model_slug, pk):
+    config = _get_config_or_404(model_slug)
+    instance = get_object_or_404(config.model, pk=pk)
+    return render(request, 'dashboard/model_detail.html', {
+        'registry': REGISTRY,
+        'model_slug': model_slug,
+        'config': config,
+        'instance': instance,
+    })
+
+
+@login_required(login_url='dashboard_login')
+@user_passes_test(is_staff_user, login_url='dashboard_login')
 def model_create(request, model_slug):
     config = _get_config_or_404(model_slug)
     if not config.can_create:

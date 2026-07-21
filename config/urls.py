@@ -28,6 +28,7 @@ urlpatterns = [
     path('dashboard/', dashboard_views.dashboard_home, name='dashboard_home'),
     path('dashboard/<str:model_slug>/', dashboard_views.model_list, name='dashboard_model_list'),
     path('dashboard/<str:model_slug>/new/', dashboard_views.model_create, name='dashboard_model_create'),
+    path('dashboard/<str:model_slug>/<int:pk>/', dashboard_views.model_detail, name='dashboard_model_detail'),
     path('dashboard/<str:model_slug>/<int:pk>/edit/', dashboard_views.model_edit, name='dashboard_model_edit'),
     path('dashboard/<str:model_slug>/<int:pk>/delete/', dashboard_views.model_delete, name='dashboard_model_delete'),
 ]

@@ -1,0 +1,40 @@
+{% extends "dashboard/base.html" %}
+{% load dashboard_extras %}
+
+{% block title %}{{ instance }} — {{ config.label }}{% endblock %}
+{% block page_title %}{{ config.label }} Detail{% endblock %}
+
+{% block content %}
+<div class="db-page-header">
+  <h2>{{ instance }}</h2>
+  <a href="{% url 'dashboard_model_list' model_slug=model_slug %}" class="db-btn db-btn-ghost"><i class="fas fa-arrow-left"></i> Back to list</a>
+</div>
+
+<div class="db-card">
+  <dl class="db-detail-list">
+    {% for field in config.detail_fields %}
+    <div class="db-detail-row">
+      <dt>{{ config.model|field_label:field }}</dt>
+      <dd>
+        {% with value=instance|get_attr:field %}
+          {% if value == True %}
+            <span class="db-badge db-badge-on">Yes</span>
+          {% elif value == False %}
+            <span class="db-badge db-badge-off">No</span>
+          {% else %}
+            {{ value|linebreaksbr }}
+          {% endif %}
+        {% endwith %}
+      </dd>
+    </div>
+    {% endfor %}
+  </dl>
+
+  <div class="db-row-actions" style="margin-top: 8px;">
+    {% if config.can_edit %}
+    <a href="{% url 'dashboard_model_edit' model_slug=model_slug pk=instance.pk %}" class="db-btn"><i class="fas fa-pen"></i> Edit</a>
+    {% endif %}
+    <a href="{% url 'dashboard_model_delete' model_slug=model_slug pk=instance.pk %}" class="db-btn db-btn-danger"><i class="fas fa-trash"></i> Delete</a>
+  </div>
+</div>
+{% endblock %}

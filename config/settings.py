@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-0-sdfk9wx&7ih5t#8au-_mt%j3-pab!1l4+8q#^b6!$_73k1q#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sigma-izip.onrender.com']
+
+CSRF_TRUSTED_ORIGINS = ['https://sigma-izip.onrender.com']
 
 
 # Application definition

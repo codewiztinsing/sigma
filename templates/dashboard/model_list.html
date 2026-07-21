@@ -40,6 +40,7 @@
         </td>
         {% endfor %}
         <td class="db-row-actions">
+          <a href="{% url 'dashboard_model_detail' model_slug=model_slug pk=obj.pk %}" class="db-btn db-btn-ghost"><i class="fas fa-eye"></i></a>
           {% if config.can_edit %}
           <a href="{% url 'dashboard_model_edit' model_slug=model_slug pk=obj.pk %}" class="db-btn db-btn-ghost"><i class="fas fa-pen"></i></a>
           {% endif %}

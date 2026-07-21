@@ -7,13 +7,15 @@ from projects.models import Project, ProjectCategory
 class ModelConfig:
     """Describes how a model is listed/created/edited in the dashboard."""
 
-    def __init__(self, model, label, list_fields, form_fields, can_create=True, can_edit=True):
+    def __init__(self, model, label, list_fields, form_fields, can_create=True, can_edit=True,
+                 detail_fields=None):
         self.model = model
         self.label = label
         self.list_fields = list_fields
         self.form_fields = form_fields
         self.can_create = can_create
         self.can_edit = can_edit
+        self.detail_fields = detail_fields or list_fields
 
     @property
     def slug(self):
@@ -46,6 +48,7 @@ REGISTRY = {
             label='Contact Messages',
             list_fields=['name', 'email', 'subject', 'created_at'],
             form_fields=['name', 'email', 'phone', 'subject', 'message'],
+            detail_fields=['name', 'email', 'phone', 'subject', 'message', 'created_at'],
             can_create=False,
             can_edit=False,
         ),
