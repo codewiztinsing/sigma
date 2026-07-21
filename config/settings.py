@@ -29,11 +29,11 @@ SECRET_KEY = os.environ.get(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['sigma-izip.onrender.com']
+ALLOWED_HOSTS = ['sigma-izip.onrender.com', 'sigma-xo47.onrender.com']
 if DEBUG:
     ALLOWED_HOSTS += ['localhost', '127.0.0.1']
 
-CSRF_TRUSTED_ORIGINS = ['https://sigma-izip.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https://sigma-izip.onrender.com', 'https://sigma-xo47.onrender.com']
 
 
 # Application definition
