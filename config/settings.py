@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get(
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+DEBUG = True #os.environ.get('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = ['sigma-izip.onrender.com', 'sigma-xo47.onrender.com']
 if DEBUG:
