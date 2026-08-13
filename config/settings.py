@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True #os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['shedex.org', 'www.shedex.org']
+ALLOWED_HOSTS = ['shedex.org', 'www.shedex.org',"localhost"]
 
 
 # Application definition

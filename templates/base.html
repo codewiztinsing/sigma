@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{% block title %}Sigma EcoBuild &amp; Innovation — Social Innovation Venture Studio in Ethiopia{% endblock %}</title>
-<meta name="description" content="{% block meta_description %}Sigma EcoBuild & Innovation is a Social Innovation Venture Studio that transforms market challenges into enterprises that create jobs, improve productivity, and reduce poverty across Ethiopia.{% endblock %}">
+<title>{% block title %}Shedex EcoBuild &amp; Innovation — Social Innovation Venture Studio in Ethiopia{% endblock %}</title>
+<meta name="description" content="{% block meta_description %}Shedex EcoBuild & Innovation is a Social Innovation Venture Studio that transforms market challenges into enterprises that create jobs, improve productivity, and reduce poverty across Ethiopia.{% endblock %}">
 <link rel="canonical" href="{% block canonical %}https://www.sigmaecobuild.com/{% endblock %}">
 {% block og_tags %}
 <meta property="og:type" content="website">
-<meta property="og:title" content="Sigma EcoBuild & Innovation — Social Innovation Venture Studio">
+<meta property="og:title" content="Shedex EcoBuild & Innovation — Social Innovation Venture Studio">
 <meta property="og:description" content="Transforming market challenges into innovative enterprises that create jobs and reduce poverty across Ethiopia.">
 <meta property="og:image" content="{% static 'images/og-image.jpg' %}">
 <meta property="og:url" content="https://www.sigmaecobuild.com/">
@@ -32,12 +32,8 @@
 
 <!-- ===== NAVBAR ===== -->
 <nav class="navbar" aria-label="Main navigation">
-  <a href="{% url 'home' %}" class="logo-link" aria-label="Sigma EcoBuild and Innovation — Home">
-    <div class="logo-section">
-      <span class="logo-text">SIGMA<span class="leaf">.</span></span>
-      <span class="logo-sub">ECO<span class="eco">BUILD</span> &amp; INNOVATION</span>
-      <span class="tagline">Innovating for Sustainable Livelihoods</span>
-    </div>
+  <a href="{% url 'home' %}" class="logo-link" aria-label="Shedex EcoBuild and Innovation — Home">
+    <img src="{% static 'logo.png' %}" alt="Shedex EcoBuild &amp; Innovation" class="logo-img">
   </a>
   <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
   <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
@@ -62,7 +58,7 @@
 <section class="footer-cta">
   <div class="footer-cta-content">
     <h3>Every Great Idea Deserves an Ecosystem to Succeed.</h3>
-    <p>Work with Sigma to connect innovation, entrepreneurship, technology, finance, manufacturing, and partnerships that transform ideas into sustainable enterprises, decent jobs, and lasting livelihoods.</p>
+    <p>Work with Shedex to connect innovation, entrepreneurship, technology, finance, manufacturing, and partnerships that transform ideas into sustainable enterprises, decent jobs, and lasting livelihoods.</p>
   </div>
   <div class="footer-cta-buttons">
     <a href="{% url 'partner' %}" class="btn-footer btn-footer-primary">Partner With Us</a>
@@ -74,7 +70,7 @@
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-brand">
-      <span class="logo-text">SIGMA<span class="leaf">.</span></span>
+      <span class="logo-text">SHEDEX<span class="leaf">.</span></span>
       <p>Connecting innovation, entrepreneurship, technology, finance, manufacturing, and
       partnerships to transform ideas into sustainable enterprises and lasting livelihoods
       across Ethiopia.</p>
@@ -107,7 +103,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; <span class="current-year">2026</span> Sigma EcoBuild &amp; Innovation. All rights reserved.</p>
+    <p>&copy; <span class="current-year">2026</span> Shedex EcoBuild &amp; Innovation. All rights reserved.</p>
   </div>
 </footer>
 
