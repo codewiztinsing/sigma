@@ -1472,6 +1472,8 @@ textarea:focus-visible, select:focus-visible, label:focus-visible {
   transition: all 0.3s;
 }
 .btn-footer-primary {
+  padding-left: 52px;
+  padding-right: 52px;
   background: var(--sigma-green);
   color: var(--white);
   border: 2px solid var(--sigma-green);
