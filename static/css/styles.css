@@ -138,7 +138,7 @@ textarea:focus-visible, select:focus-visible, label:focus-visible {
 .logo-section { display: flex; flex-direction: column; }
 .logo-link { text-decoration: none; }
 .logo-main { display: flex; align-items: center; gap: 6px; }
-.logo-img { height: 55px; width: auto; display: block; }
+.logo-img { height: 80px; width: auto; display: block; }
 .logo-text {
   font-size: 26px;
   font-weight: 900;
