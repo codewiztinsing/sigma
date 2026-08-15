@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{% block title %}Dashboard{% endblock %} — Sigma EcoBuild</title>
+<title>{% block title %}Dashboard{% endblock %} — Shedex</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
   :root {
@@ -145,7 +145,7 @@
 <body>
 <div class="db-layout">
   <aside class="db-sidebar">
-    <div class="db-sidebar-brand">SIGMA<span>.</span> Dashboard</div>
+    <div class="db-sidebar-brand">Shedex Dashboard</div>
     <nav class="db-nav">
       <a href="{% url 'dashboard_home' %}" class="{% if not model_slug %}active{% endif %}"><i class="fas fa-gauge"></i> Overview</a>
       {% for slug, config in registry.items %}

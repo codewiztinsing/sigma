@@ -23,7 +23,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 95px; }
+html { scroll-behavior: smooth; scroll-padding-top: 127px; }
 
 body {
   font-family: 'Inter', sans-serif;
@@ -116,6 +116,41 @@ textarea:focus-visible, select:focus-visible, label:focus-visible {
 .animate-delay-4 { transition-delay: 0.4s; }
 .animate-delay-5 { transition-delay: 0.5s; }
 
+/* ===== TICKER ===== */
+.ticker-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  background: var(--sigma-navy-dark);
+  overflow: hidden;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+}
+.ticker-track {
+  display: flex;
+  white-space: nowrap;
+  animation: ticker-scroll 18s linear infinite;
+}
+.ticker-item {
+  display: inline-block;
+  padding: 0 40px;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: var(--sigma-green-bright);
+  text-transform: uppercase;
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+}
+
 /* ===== NAVBAR ===== */
 .navbar {
   display: flex;
@@ -125,7 +160,7 @@ textarea:focus-visible, select:focus-visible, label:focus-visible {
   background: linear-gradient(135deg, #003264 0%, #005a8c 100%);
   position: fixed;
   width: 100%;
-  top: 0;
+  top: 32px;
   z-index: 1000;
   box-shadow: 0 4px 15px rgba(0,50,100,0.2);
   min-height: 75px;
@@ -236,7 +271,7 @@ textarea:focus-visible, select:focus-visible, label:focus-visible {
 
 /* ===== PAGE HERO ===== */
 .page-hero {
-  margin-top: 75px;
+  margin-top: 107px;
   background: linear-gradient(135deg, var(--sigma-navy) 0%, var(--sigma-blue) 60%, var(--sigma-blue-light) 100%);
   padding: 70px 60px 60px;
   text-align: center;
@@ -283,7 +318,7 @@ textarea:focus-visible, select:focus-visible, label:focus-visible {
 
 /* ===== HOME HERO ===== */
 .hero {
-  margin-top: 75px;
+  margin-top: 107px;
   min-height: 520px;
   background: linear-gradient(135deg, #E8F4FD 0%, #F0F7FF 50%, #E0F2FE 100%);
   position: relative;
