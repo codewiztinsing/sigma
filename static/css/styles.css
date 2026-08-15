@@ -554,14 +554,15 @@ textarea:focus-visible, select:focus-visible, label:focus-visible {
 .about-card {
   padding: 40px 30px;
   border-radius: 16px;
-  background: var(--white);
-  border: 1px solid rgba(0,50,100,0.1);
   transition: all 0.3s;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
   text-align: center;
 }
+.about-card-link {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
 .about-card:hover {
-  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
   transform: translateY(-5px);
 }
 .about-card-icon {
