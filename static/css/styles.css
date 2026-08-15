@@ -554,7 +554,6 @@ textarea:focus-visible, select:focus-visible, label:focus-visible {
 .about-card {
   padding: 40px 30px;
   border-radius: 16px;
-  background: linear-gradient(135deg, var(--sigma-navy) 0%, var(--sigma-navy-dark) 100%);
   transition: all 0.3s;
   text-align: center;
 }
@@ -565,7 +564,6 @@ textarea:focus-visible, select:focus-visible, label:focus-visible {
 }
 .about-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
 }
 .about-card-icon {
   width: 55px;
@@ -586,10 +584,10 @@ textarea:focus-visible, select:focus-visible, label:focus-visible {
 .about-card h4 {
   font-size: 17px;
   font-weight: 700;
-  color: var(--white);
+  color: var(--sigma-blue);
   margin-bottom: 14px;
 }
-.about-card p { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 20px; }
+.about-card p { font-size: 13px; color: var(--text-gray); line-height: 1.8; margin-bottom: 20px; }
 .btn-card {
   display: inline-flex;
   align-items: center;
