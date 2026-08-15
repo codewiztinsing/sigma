@@ -453,6 +453,14 @@ textarea:focus-visible, select:focus-visible, label:focus-visible {
   justify-content: center;
   padding-right: 60px;
 }
+.hero-visual-img {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  filter: drop-shadow(0 12px 30px rgba(0,50,100,0.15));
+}
 .hero-orbit {
   position: relative;
   width: 380px;
