@@ -1544,7 +1544,7 @@ textarea:focus-visible, select:focus-visible, label:focus-visible {
   gap: 40px;
   text-align: left;
 }
-.footer-brand .logo-text { font-size: 22px; }
+.footer-logo-img { height: 60px; width: auto; display: block; }
 .footer-brand p { margin-top: 12px; line-height: 1.8; max-width: 300px; }
 .footer h5 {
   color: var(--white);
