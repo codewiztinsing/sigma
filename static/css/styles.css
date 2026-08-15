@@ -554,7 +554,7 @@ textarea:focus-visible, select:focus-visible, label:focus-visible {
 .about-card {
   padding: 40px 30px;
   border-radius: 16px;
-  background: #0A0A0A;
+  background: linear-gradient(135deg, var(--sigma-navy) 0%, var(--sigma-navy-dark) 100%);
   transition: all 0.3s;
   text-align: center;
 }
